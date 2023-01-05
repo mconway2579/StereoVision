@@ -2,24 +2,17 @@
   <!--https://github.com/ros-perception/image_pipeline/issues/130-->
 <group ns="stereo">
 
-  <node name="left" pkg="usb_cam" type="usb_cam_node" output="screen" >
-    <param name="video_device" value="/dev/video4" />
-    <param name="image_width" value="640" />
-    <param name="image_height" value="480" />
-    <param name="pixel_format" value="yuyv" />
-    <param name="camera_frame_id" value="left" />
-    <param name="io_method" value="mmap"/>
+  <node name="left" pkg="cv_camera" type="cv_camera_node" output="screen" >
+    <param name="device_id" value="4" />
+
+    <param name="frame_id" value="left" />
     <param name="camera_info_url" value="package://stereo_vision/calibs/left.yaml"/>
   </node>
 
 
-  <node name="right" pkg="usb_cam" type="usb_cam_node" output="screen" >
-    <param name="video_device" value="/dev/video2" />
-    <param name="image_width" value="640" />
-    <param name="image_height" value="480" />
-    <param name="pixel_format" value="yuyv" />
-    <param name="camera_frame_id" value="right" />
-    <param name="io_method" value="mmap"/>
+  <node name="right" pkg="cv_camera" type="cv_camera_node" output="screen" >
+    <param name="device_id" value="2" />
+    <param name="frame_id" value="right" />
     <param name="camera_info_url" value="package://stereo_vision/calibs/right.yaml"/>
   </node>
 
