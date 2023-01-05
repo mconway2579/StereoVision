@@ -39,6 +39,5 @@
 <remap from="/stereo/right/image" to="/stereo/right/image_raw"/>
 </node>
 
-<node type="rviz" name="rviz" pkg="rviz" args="-d $(find stereo_vision)/rviz/see_pc2.rviz" />
 
 </launch>
